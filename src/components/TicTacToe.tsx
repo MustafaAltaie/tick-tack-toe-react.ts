@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
 const TicTacToe: React.FC = () => {
-  const [board, setBoard] = useState<string[][]>([
+  const initialBoard = [
     ['', '', ''],
     ['', '', ''],
     ['', '', '']
-  ]);
+  ];
 
+  const [board, setBoard] = useState<string[][]>(initialBoard);
   const [player, setPlayer] = useState<'X' | 'O'>('X');
 
   const handleClick = (row: number, col: number) => {
@@ -14,6 +15,11 @@ const TicTacToe: React.FC = () => {
     newBoard[row][col] = player;
     setBoard(newBoard);
     setPlayer(player === 'X' ? 'O' : 'X');
+  };
+
+  const resetGame = () => {
+    setBoard(initialBoard);
+    setPlayer('X');
   };
 
   return (
@@ -34,6 +40,7 @@ const TicTacToe: React.FC = () => {
           </div>
         ))}
       </div>
+      <button onClick={resetGame}>Reset Game</button>
     </div>
   );
 };
