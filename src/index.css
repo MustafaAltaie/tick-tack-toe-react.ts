@@ -1,0 +1,27 @@
+.tictactoe {
+  text-align: center;
+}
+
+.board {
+  display: inline-block;
+  border: 2px solid #333;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.cell:hover {
+  background-color: #f0f0f0;
+}
